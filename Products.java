@@ -21,4 +21,5 @@ public class Products {
     public void get_Price(){
         System.out.println("Price of the product: " + price);
     }
+
 }

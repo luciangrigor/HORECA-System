@@ -29,6 +29,7 @@ public abstract class HORECA{
         int optionProduct;
         String nameProduct;
 
+        s.close();
         // Functionalities
 
         switch (optionMenu){
@@ -46,30 +47,60 @@ public abstract class HORECA{
 
                 switch (optionProduct){
 
+                    // Wine
                     case 1: 
+
                         System.out.println("Please enter the name of the product: ");
                         nameProduct = s.nextLine();
 
+                        // Add
                         if (optionMenu == 1){
                             Wines wine = new Wines(nameProduct);
                             system_Wines.add(wine);
                             System.out.println(nameProduct + "was added.");
                         }
+                        // Remove
                         else{
-                            for (int i = 0; i < system_Wines.size(); i++){
-                                if (system_Wines.get(i).name == nameProduct){
-                                    system_Wines.remove(system_Wines.get(i));
-                                    System.out.println(nameProduct + "was removed.");
-                                    break;
-                                }
-                            }
+                            system_Wines.remove(String.valueOf(nameProduct));
+                            System.out.println(nameProduct + "was removed.");
                         }
                     
+                    // Drink
+                    case 2: 
 
+                        System.out.println("Please enter the name of the product: ");
+                        nameProduct = s.nextLine();
+
+                        // Add
+                        if (optionMenu == 2){
+                            Drinks drink = new Drinks(nameProduct);
+                            system_Drinks.add(drink);
+                            System.out.println(nameProduct + "was added.");
+                        }
+                        // Remove
+                        else{
+                            system_Drinks.remove(String.valueOf(nameProduct));
+                            System.out.println(nameProduct + "was removed.");
+                        }
+
+                    // Food
+                    case 3: 
+
+                        System.out.println("Please enter the name of the product: ");
+                        nameProduct = s.nextLine();
+
+                        // Add
+                        if (optionMenu == 3){
+                            Food food = new Food(nameProduct);
+                            system_Wines.add(food);
+                            System.out.println(nameProduct + "was added.");
+                        }
+                        // Remove
+                        else{
+                            system_Food.remove(String.valueOf(nameProduct));
+                            System.out.println(nameProduct + "was removed.");
+                        }
                 }
-
-
-
             
         }
 
