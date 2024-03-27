@@ -1,25 +1,31 @@
 
+import java.util.*;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public abstract class HORECA{
+
+public class HORECA implements HORECAInterface{
 
     // States
 
-    ArrayList<Products> system_Wines = new ArrayList<Products>();
-    ArrayList<Products> system_Drinks = new ArrayList<Products>();
-    ArrayList<Products> system_Food = new ArrayList<Products>();
+    private ArrayList<Products> system_Wines;
+    private ArrayList<Products> system_Drinks;
+    private ArrayList<Products> system_Food;
+
+    private int productsNumber = 0;
+
+    // Menu
     
-    public boolean Menu(){
+    public boolean runMenuMenu(){
 
         boolean exit = false;
 
-        // Console Menu
+        // Display
 
         System.out.println(" Welcome to the HORECA System Console Menu!");
         System.out.println("    -To add a new product, press 1.");
         System.out.println("    -To remove a product, press 2.");
-        System.out.println("    -To save all the information in a file, press 4.");
+        System.out.println("    -To save all the information in a file, press 3.");
         System.out.println("    -To exit the application, press 0.");
 
         // Scanners
@@ -64,7 +70,8 @@ public abstract class HORECA{
                             system_Wines.remove(String.valueOf(nameProduct));
                             System.out.println(nameProduct + "was removed.");
                         }
-                    
+                        break;
+
                     // Drink
                     case 2: 
 
@@ -82,6 +89,7 @@ public abstract class HORECA{
                             system_Drinks.remove(String.valueOf(nameProduct));
                             System.out.println(nameProduct + "was removed.");
                         }
+                        break;
 
                     // Food
                     case 3: 
@@ -100,16 +108,27 @@ public abstract class HORECA{
                             system_Food.remove(String.valueOf(nameProduct));
                             System.out.println(nameProduct + "was removed.");
                         }
+                        break;
                 }
-            
+            case 3:
+                exit = true;
+                break;
         }
-
-        return true;
+        return exit;
     }
-    
-    
     
     public static void main(String args[]){
+
+        HORECAInterface sys = new HORECA();
+        boolean exit = false;
+
+        while (!exit){
+            exit = sys.runMenu();
+        }
+
         
     }
+
+
+   
 }
