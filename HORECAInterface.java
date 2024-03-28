@@ -1,5 +1,5 @@
 
-public interface HORECA_Interface {
+public interface HORECAInterface {
 
     
     public abstract boolean runMenu();

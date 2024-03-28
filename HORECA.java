@@ -16,7 +16,7 @@ public class HORECA implements HORECAInterface{
 
     // Menu
     
-    public boolean runMenuMenu(){
+    public boolean runMenu(){
 
         boolean exit = false;
 
