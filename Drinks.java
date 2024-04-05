@@ -3,6 +3,7 @@ public class Drinks extends Products {
     
     // States
     private String type;
+    private String name;
 
     // Constructors
     public Drinks(String name){

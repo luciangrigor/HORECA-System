@@ -4,6 +4,7 @@ public class Wines extends Products {
     // States
     private String type;
     private String country;
+    private String name;
 
     // Constructors
     public Wines(String name){

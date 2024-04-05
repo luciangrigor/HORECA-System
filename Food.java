@@ -3,6 +3,7 @@ public class Food extends Products {
     
     // States 
     private String type;
+    private String name;
     
     // Constructors
     public Food(String name){
